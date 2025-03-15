@@ -17,4 +17,8 @@
     "url": "https://github.com/dprsnn/trello-clone/issues"
   },
   "homepage": "https://github.com/dprsnn/trello-clone#readme"
+  "scripts": {
+  "test": "echo \"No tests defined\" && exit 0"
+}
+
 }
