@@ -33,8 +33,9 @@ jobs:
       - name: 🧪 Запуск модульних тестів
         run: npm test -- --coverage
 
-      - name: 📊 Завантаження звітів покриття коду
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-reports
-          path: coverage/
+- name: 📊 Завантаження звітів покриття коду
+  uses: actions/upload-artifact@v4
+  with:
+    name: coverage-reports
+    path: coverage/
+
