@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Checkout репозиторію
+        uses: actions/checkout@v4
+
+      - name: 🔧 Встановлення Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Встановлення залежностей
+        run: npm install
+
+      - name: 🔍 Статичний аналіз коду (ESLint)
+        run: npx eslint src/ --ext .js,.jsx,.ts,.tsx || true
+
+      - name: 🧪 Запуск модульних тестів
+        run: npm test -- --coverage
+
+      - name: 📊 Завантаження звітів покриття коду
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-reports
+          path: coverage/
