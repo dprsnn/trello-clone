@@ -1,0 +1,20 @@
+@startuml
+participant User
+participant Board
+participant Storage
+
+User -> Board : addTask("todo", "Нова задача")
+Board -> Task : create new Task
+Board -> Storage : saveTasks()
+Storage -> LocalStorage : Save JSON
+
+User -> Board : editTask(Task, "Оновлена задача")
+Board -> Storage : saveTasks()
+
+User -> Board : deleteTask(Task)
+Board -> Storage : saveTasks()
+
+User -> Board : loadTasks()
+Board -> Storage : load()
+Storage -> Board : return tasks
+@enduml

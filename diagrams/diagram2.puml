@@ -1,0 +1,25 @@
+@startuml
+class Task {
+    - id: String
+    - text: String
+    - column: String
+    + edit(newText: String)
+    + delete()
+}
+
+class Board {
+    + addTask(column: String, text: String)
+    + editTask(task: Task, newText: String)
+    + deleteTask(task: Task)
+    + saveTasks()
+    + loadTasks()
+}
+
+class Storage {
+    + save(tasks: List)
+    + load(): List
+}
+
+Board --> Task : "Маніпулює задачами"
+Board --> Storage : "Зберігає/завантажує дані"
+@enduml

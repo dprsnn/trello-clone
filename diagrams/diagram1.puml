@@ -1,0 +1,17 @@
+@startuml
+actor User
+rectangle TrelloClone {
+    (Додати задачу) as (Add Task)
+    (Редагувати задачу) as (Edit Task)
+    (Видалити задачу) as (Delete Task)
+    (Перетягнути задачу) as (Drag Task)
+    (Зберегти задачі) as (Save Tasks)
+    (Завантажити задачі) as (Load Tasks)
+}
+User --> (Add Task)
+User --> (Edit Task)
+User --> (Delete Task)
+User --> (Drag Task)
+User --> (Save Tasks)
+User --> (Load Tasks)
+@enduml
