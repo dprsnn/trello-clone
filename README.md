@@ -42,3 +42,11 @@
 | Захист LocalStorage      | Дані користувача зберігаються локально, без сервера. |
 | Політика безпеки (CSP)   | Використання Content Security Policy. |
 
+### Діаграма випадків використання (Use Case Diagram)
+![Use Case Diagram](diagrams/diagram1.png)
+
+### Діаграма класів (Class Diagram)
+![Class Diagram](diagrams/diagram2.png)
+
+### Діаграма послідовності (Sequence Diagram)
+![Sequence Diagram](diagrams/diagram3.png)
